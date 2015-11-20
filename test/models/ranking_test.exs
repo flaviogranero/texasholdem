@@ -28,4 +28,24 @@ defmodule TexasHoldem.RankingTest do
     cards = Enum.map(Deck.suits, &(%Deck.Card{rank: 4, suit: &1})) ++ [%Deck.Card{rank: 3, suit: :hearts}]
     assert Ranking.evaluate(cards) == :four_of_a_kind
   end
+
+  test "ranks as full_house" do    
+    cards_rank_4 = Deck.suits 
+                    |> Enum.map(&(%Deck.Card{rank: 4, suit: &1}))
+                    |> Enum.take_random(3)
+    cards_rank_6 = Deck.suits 
+                    |> Enum.map(&(%Deck.Card{rank: 6, suit: &1}))
+                    |> Enum.take_random(2)
+    assert Ranking.evaluate(cards_rank_4 ++ cards_rank_6) == :full_house
+  end
+
+  test "ranks as full_house with 2 lower first" do    
+    cards_rank_4 = Deck.suits 
+                    |> Enum.map(&(%Deck.Card{rank: 4, suit: &1}))
+                    |> Enum.take_random(2)
+    cards_rank_6 = Deck.suits 
+                    |> Enum.map(&(%Deck.Card{rank: 6, suit: &1}))
+                    |> Enum.take_random(3)
+    assert Ranking.evaluate(cards_rank_4 ++ cards_rank_6) == :full_house
+  end
 end
