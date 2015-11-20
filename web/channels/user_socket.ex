@@ -3,6 +3,7 @@ defmodule TexasHoldem.UserSocket do
 
   ## Channels
   # channel "rooms:*", TexasHoldem.RoomChannel
+  channel "rooms:lobby", TexasHoldem.RoomChannel
 
   ## Transports
   transport :websocket, Phoenix.Transports.WebSocket
