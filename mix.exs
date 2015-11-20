@@ -10,7 +10,10 @@ defmodule TexasHoldem.Mixfile do
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
      aliases: aliases,
-     deps: deps]
+     deps: deps,
+     test_coverage: [tool: ExCoveralls],
+     preferred_cli_env: ["coveralls": :test, "coveralls.detail": :test, "coveralls.post": :test]
+    ]
   end
 
   # Configuration for the OTP application.
@@ -35,7 +38,8 @@ defmodule TexasHoldem.Mixfile do
      {:postgrex, ">= 0.0.0"},
      {:phoenix_html, "~> 2.1"},
      {:phoenix_live_reload, "~> 1.0", only: :dev},
-     {:cowboy, "~> 1.0"}]
+     {:cowboy, "~> 1.0"},
+     {:excoveralls, "~> 0.4", only: :test}]
   end
 
   # Aliases are shortcut or tasks specific to the current project.
