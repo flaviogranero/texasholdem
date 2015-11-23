@@ -11,10 +11,6 @@ defmodule TexasHoldem.Ranking do
   def one_pair, do:        2
   def high_card, do:       1
 
-  def get_rank_value(name) do
-    Module.get_attribute __MODULE__, name
-  end
-
   def best_possible_hand(board, hand) do
     board ++ hand
       |> combinations(5)
