@@ -1,4 +1,11 @@
-# TexasHoldem
+# Texas Holdem
+
+__* Work in Progress__
+
+A Texas Hold'Em Poker game written while learning Elixir and Phoenix Framework.
+Based on [Playing Poker with Elixir Blog posts series](http://blog.tokafish.com/playing-poker-with-elixir-part-1/).
+
+## Development
 
 To start your Phoenix app:
 
@@ -17,3 +24,4 @@ Ready to run in production? Please [check our deployment guides](http://www.phoe
   * Docs: http://hexdocs.pm/phoenix
   * Mailing list: http://groups.google.com/group/phoenix-talk
   * Source: https://github.com/phoenixframework/phoenix
+# texasholdem
